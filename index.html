@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iResults - iRacing Discord Bot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c93838;
+            --background: #09090b;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            background-color: var(--background);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(45deg, rgba(201, 56, 56, 0.2), rgba(255, 107, 107, 0.2));
+        }
+
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 1rem;
+            padding: 1px;
+            background: linear-gradient(45deg, #c93838, #ff6b6b);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #c93838, #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #c93838, #ff6b6b);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff6b6b, #c93838);
+            border-radius: inherit;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 56, 56, 0.2), transparent 70%);
+            filter: blur(50px);
+            z-index: -1;
+        }
+
+        .command-card {
+            transition: all 0.3s ease;
+        }
+
+        .command-card:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-blur {
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative">
+    <div class="glow top-0 left-0"></div>
+    <div class="glow bottom-0 right-0"></div>
+
+    <nav class="fixed w-full z-50 nav-blur">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">iResults</h1>
+            <a href="#" onclick="window.open('https://discord.com/api/oauth2/authorize?client_id=1320895408305868881&permissions=2147486720&scope=bot%20applications.commands', '_blank')" 
+               class="btn-primary px-6 py-2 rounded-full font-semibold text-white shadow-lg">
+                Add to Discord
+            </a>
+        </div>
+    </nav>
+
+    <header class="container mx-auto px-6 pt-32 pb-20">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex-1">
+                <h1 class="text-6xl font-bold mb-6 leading-tight">Elevate Your <span class="gradient-text">iRacing</span> Experience</h1>
+                <p class="text-xl text-gray-400 mb-12">
+                    Real-time race tracking and statistics, seamlessly integrated with Discord.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#features" class="btn-primary px-8 py-4 rounded-full font-semibold text-white shadow-lg">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 floating">
+                <div class="gradient-border p-6">
+                    <img src="/api/placeholder/600/400" alt="Bot Preview" class="rounded-lg w-full"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="container mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold text-center mb-16">Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card glass p-8 rounded-2xl">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Real-time Tracking</h3>
+                <p class="text-gray-400">Instant race results and statistics directly in your Discord server.</p>
+            </div>
+            <div class="feature-card glass p-8 rounded-2xl">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Detailed Analytics</h3>
+                <p class="text-gray-400">Comprehensive race statistics including iRating and Safety Rating changes.</p>
+            </div>
+            <div class="feature-card glass p-8 rounded-2xl">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Easy Setup</h3>
+                <p class="text-gray-400">Simple commands to configure and manage driver tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold text-center mb-16">Commands</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="command-card glass p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-mono text-white">/</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">lastrace</h3>
+                        <p class="text-gray-400">View the most recent race results for any iRacing member.</p>
+                        <code class="mt-4 block text-sm text-gray-500">/lastrace customer_id:123456</code>
+                    </div>
+                </div>
+            </div>
+            <div class="command-card glass p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-mono text-white">/</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">trackmember</h3>
+                        <p class="text-gray-400">Start tracking a driver's race results in your server.</p>
+                        <code class="mt-4 block text-sm text-gray-500">/trackmember customer_id:123456</code>
+                    </div>
+                </div>
+            </div>
+            <div class="command-card glass p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-mono text-white">/</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">setchannel</h3>
+                        <p class="text-gray-400">Set up a channel for automated race result updates.</p>
+                        <code class="mt-4 block text-sm text-gray-500">/setchannel channel:#results</code>
+                    </div>
+                </div>
+            </div>
+            <div class="command-card glass p-8 rounded-2xl">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-mono text-white">/</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">help</h3>
+                        <p class="text-gray-400">Display detailed information about all available commands.</p>
+                        <code class="mt-4 block text-sm text-gray-500">/help</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="glass mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <p>© 2024 iResults Bot • Not affiliated with iRacing</p>
+        </div>
+    </footer>
+</body>
+</html>
