@@ -1,0 +1,49 @@
+Terms of Service - iResults Discord Bot
+
+Last Updated: December 25, 2024
+
+1. Acceptance of Terms
+By using iResults ("the Bot"), you agree to these Terms of Service. If you disagree, discontinue use immediately.
+
+2. Service Description
+iResults is a Discord bot providing iRacing statistics and race tracking. The service is provided "as is" without warranties.
+
+3. User Obligations
+- Use the Bot in compliance with Discord's Terms
+- Maintain accurate iRacing credentials
+- Do not abuse, exploit, or attempt to reverse engineer the Bot
+- Do not use for unauthorized data collection
+
+4. Data Collection and Privacy
+We collect:
+- Discord server IDs
+- iRacing customer IDs
+- Race results data
+- Channel configuration settings
+
+Data is used solely for Bot functionality and deleted upon request.
+
+5. Limitations of Service
+- No guarantee of continuous service
+- May limit usage to prevent abuse
+- Features subject to change
+- Service may be terminated at any time
+
+6. Intellectual Property
+All rights reserved. Bot code, design, and assets are protected by copyright law.
+
+7. Disclaimer of Warranty
+The Bot is provided without warranties. We're not responsible for:
+- Service interruptions
+- Data accuracy
+- Third-party services
+- User-caused damages
+
+8. Changes to Terms
+We reserve the right to modify these terms. Users will be notified of significant changes.
+
+9. Contact
+Questions about these terms: iamspeedou@proton.me
+
+10. Not Affiliated with iRacing
+This Bot is not affiliated with, endorsed, or sponsored by iRacing.com Motorsport Simulations.

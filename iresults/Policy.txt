@@ -1,0 +1,80 @@
+Privacy Policy - iResults Discord Bot
+
+Last Updated: December 25, 2024
+
+1. Information Collection
+We collect:
+- Discord user IDs and server IDs
+- iRacing customer IDs and race data
+- Server configuration settings
+- Communication logs
+
+2. Data Usage
+Your data is used to:
+- Provide race tracking services
+- Send automated notifications
+- Maintain user preferences
+- Improve bot functionality
+
+3. Data Storage
+- Data stored securely on dedicated servers
+- Encrypted during transmission
+- Retained only as long as necessary
+- Deleted upon user request
+
+4. Third-Party Services
+We interface with:
+- Discord API
+- iRacing API
+No data shared with unauthorized parties.
+
+5. User Rights
+You can:
+- Request data access
+- Request data deletion
+- Opt out of tracking
+- Modify bot settings
+
+6. Data Security
+We implement:
+- Encryption protocols
+- Access controls
+- Regular security audits
+- Breach notification procedures
+
+7. Children's Privacy
+Not intended for users under 13.
+No knowing collection of minor data.
+
+8. Changes
+Policy updates notified via:
+- Discord server
+- Bot announcements
+- Website updates
+
+9. Contact
+Privacy concerns: [Your Contact Information]
+
+10. Consent
+Using the bot constitutes acceptance of this policy.
+
+11. Data Retention
+- Active data: Duration of use
+- Logs: 30 days
+- Backup data: 90 days
+
+12. Cookie Policy
+No cookies used directly by bot.
+Website may use essential cookies.
+
+13. Legal Basis
+Processing based on:
+- User consent
+- Legitimate interests
+- Service provision
+
+14. International Transfer
+Data processed in [Your Location].
+Complies with international data protection laws.
+
+Note: This bot operates independently and is not affiliated with iRacing.com Motorsport Simulations.
